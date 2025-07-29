@@ -1,0 +1,16 @@
+# Ignore VS folders
+.vs/
+*.user
+*.suo
+
+# Ignore build results
+bin/
+obj/
+
+# Ignore Angular build and node_modules
+client/node_modules/
+client/dist/
+client/.angular/
+
+# Ignore environment files
+*.env
