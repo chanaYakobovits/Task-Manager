@@ -1,32 +1,60 @@
-<form class="user-form" [formGroup]="userForm">
-    <h2>יצירת משתמש</h2>
+<div class="header-line">
+    <mat-icon class="outlined-icon">person_outline</mat-icon>
+    <span class="header-text">הוספת משתמש</span>
+  </div>  
+<form [formGroup]="userForm" class="user-form-custom" (ngSubmit)="save()">
+    <div class="form-row">
+      <label>
+        <p class="form-label">שם משתמש <span *ngIf="userForm.get('UserName')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" dir="rtl" formControlName="UserName" placeholder="הקלד שם משתמש">
+    </div>
   
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>שם מלא</mat-label>
-      <input matInput formControlName="fullName" placeholder="הקלד את שמך המלא" required>
-    </mat-form-field>
+    <div class="form-row">
+      <label>
+        <p class="form-label">שם פרטי <span *ngIf="userForm.get('FirstName')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" dir="rtl" formControlName="FirstName" placeholder="הקלד שם פרטי">
+    </div>
   
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>אימייל</mat-label>
-      <input matInput type="email" formControlName="email" placeholder="example@gmail.com" required>
-    </mat-form-field>
+    <div class="form-row">
+      <label>
+        <p class="form-label">שם משפחה <span *ngIf="userForm.get('LastName')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" dir="rtl" formControlName="LastName" placeholder="הקלד שם משפחה">
+    </div>
   
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>סיסמה</mat-label>
-      <input matInput type="password" formControlName="password" required>
-    </mat-form-field>
+    <div class="form-row">
+      <label>
+        <p class="form-label">אימייל <span *ngIf="userForm.get('email')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" type="email" dir="rtl" formControlName="email" placeholder="example@gmail.com">
+    </div>
   
-    <mat-form-field appearance="fill" class="full-width">
-      <mat-label>תפקיד</mat-label>
-      <mat-select formControlName="role">
-        <mat-option value="admin">מנהל</mat-option>
-        <mat-option value="user">משתמש</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="form-row">
+      <label>
+        <p class="form-label">טלפון <span *ngIf="userForm.get('Phone')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" dir="rtl" formControlName="Phone" placeholder="הקלד מספר טלפון">
+    </div>
+  
+    <div class="form-row">
+      <label>
+        <p class="form-label">כתובת <span *ngIf="userForm.get('Address')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" dir="rtl" formControlName="Address" placeholder="הקלד כתובת">
+    </div>
+  
+    <div class="form-row">
+      <label>
+        <p class="form-label">סיסמה <span *ngIf="userForm.get('password')?.invalid" class="required">*</span></p>
+      </label>
+      <input class="form-input" type="password" dir="rtl" formControlName="password" placeholder="********">
+    </div>
   
     <div class="form-actions">
-      <button mat-raised-button color="primary" type="submit">שמור</button>
-      <button mat-button type="button">ביטול</button>
+      <button class="btn-save" type="submit">שמור</button>
+      <button class="btn-cancel" type="button">ביטול</button>
     </div>
   </form>
   
