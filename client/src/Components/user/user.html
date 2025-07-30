@@ -1,0 +1,32 @@
+<form class="user-form" [formGroup]="userForm">
+    <h2>יצירת משתמש</h2>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>שם מלא</mat-label>
+      <input matInput formControlName="fullName" placeholder="הקלד את שמך המלא" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>אימייל</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="example@gmail.com" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>סיסמה</mat-label>
+      <input matInput type="password" formControlName="password" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>תפקיד</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="admin">מנהל</mat-option>
+        <mat-option value="user">משתמש</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">שמור</button>
+      <button mat-button type="button">ביטול</button>
+    </div>
+  </form>
+  
