@@ -1,1 +1,64 @@
-<p>task works!</p>
+<div class="requests-container">
+    <div class="header-row">
+      <div class="title-with-icon">
+        <mat-icon class="icon">checklist_rtl</mat-icon>
+        <span>כל המשימות</span>
+      </div>
+      
+      <div class="tabs-and-search">
+
+        <div class="search-bar">
+          <mat-icon>search</mat-icon>
+          <input type="text" placeholder="חיפוש..." [(ngModel)]="searchQuery" (ngModelChange)="filterRequests()" />
+        </div>
+
+      </div>
+    </div>
+  
+    <!-- טבלה -->
+    <table class="requests-table">
+      <thead>
+        <tr>
+  
+          <!-- <th>תאריך בקשה</th> -->
+          <th class="highlight-col"></th>
+          <th (click)="sortByDate()" class="sortable-header">
+            תאריך משימה
+            <span class="sort-icons">
+              <mat-icon [class.active]="sortDirection === 'asc'">arrow_drop_up</mat-icon>
+              <mat-icon [class.active]="sortDirection === 'desc'">arrow_drop_down</mat-icon>
+            </span>
+          </th>
+  
+          <th>שם המשימה</th>
+          <th>תאור המשמה</th>
+          <th>סטטוס המשימה</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngFor="let request of list$ | async"> -->
+        <!-- <tr *ngFor="let request of filteredList"> -->
+        <tr *ngFor="let request of filteredList; let i = index" [class.selected]="i === selectedRowIndex"
+          (click)="selectedRowIndex = i">
+          <td class="highlight-col" [class.active]="i === selectedRowIndex"></td> 
+          <!-- <td>{{ request.requestDate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ request.applicantName }}</td>
+          <td>{{ request.nameUnit }}</td>
+          <td>{{ request.facility }}</td> -->
+          <td>ao</td>
+          <td>ao</td>
+          <td>ao</td>
+          <td>ao</td>
+          <td>
+            <button class="status-btn"  >
+              סטטוס
+              <!-- {{ request.applicationStatus }} -->
+            </button>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
